@@ -4,7 +4,7 @@
   background: linear-gradient(135deg, #6366f1, #a78bfa); /* blue to purple */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.5);
-  opacity: 1;
+  opacity: 0;
   transform: scale(0.5);
 }
 
@@ -31,4 +31,54 @@
       background-color: #4f46e5;
     }
   }
+}
+
+.challenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, #a78bfa, #6366f1);
+  color: white;
+}
+
+.btn {
+  position: relative;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  margin: 0;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  left: -41vw;
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  left: -29vw;
+  width: 300px;
+  height: 100px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  bottom: -50vh;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: 300px;
+  height: 100px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  transform:scale(0.5)
 }
