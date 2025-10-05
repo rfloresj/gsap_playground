@@ -1,17 +1,49 @@
 import gsap from 'gsap';
 
-const tabs = document.querySelectorAll('.tab');
-const indicator = document.querySelector('.indicator');
+const tabs = document.querySelectorAll(".tab");
+const indicator = document.querySelector(".indicator");
+const tabRow = document.querySelector(".tab-row");
 
-tabs.forEach((tab, idx) => {
+const updateIndicator = (target) => {
+  const tabBounds = target.getBoundingClientRect();
+  const rowBounds = tabRow.getBoundingClientRect();
+  
+  const width = tabBounds.width;
+  const offset = tabBounds.left - rowBounds.left;
+
+  gsap.to(indicator, {
+    x: offset,
+    width: width,
+    duration: 0.4,
+    ease: 'back.out(1.7)',
+  })
+}
+
+tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
     tabs.forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
+    updateIndicator(tab)
+  })
+})
 
-    gsap.to(indicator, {
-      x: tab.offsetLeft,
-      duration: 0.5,
-      ease: 'back.inOut',
-    });
-  });
-});
+updateIndicator(document.querySelector('.tab.active'))
+
+
+
+// My solution
+// const tabs = document.querySelectorAll('.tab');
+// const indicator = document.querySelector('.indicator');
+
+// tabs.forEach((tab, idx) => {
+//   tab.addEventListener('click', () => {
+//     tabs.forEach((t) => t.classList.remove('active'));
+//     tab.classList.add('active');
+
+//     gsap.to(indicator, {
+//       x: tab.offsetLeft,
+//       duration: 0.5,
+//       ease: 'back.out',
+//     });
+//   });
+// });

@@ -50,21 +50,20 @@ yoyo.addEventListener('click', () => {
 
 // Challenge
 
-const btn = gsap.to('.btn', {
-  x:"54vw",
-  duration: 1.5,
-  opacity: 1,
-  ease: "power2.inOut",
-});
+gsap.to(".btn", {
+  y: -20,
+  duration: 0.4,
+  ease: "power4.out"
+})
 
-const toast = gsap.to('.toast', {
+gsap.to('.toast', {
   y:"-54vw",
   duration: 1,
   opacity: 1,
   ease: "power4.out",
 })
 
-const card = gsap.to('.card', {
+gsap.to('.card', {
   duration: 2,
   opacity: 1,
   scale: 1,
